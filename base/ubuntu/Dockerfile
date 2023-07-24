@@ -20,8 +20,8 @@ USER 0
 
 # Removed because of vulnerabilities: git-lfs
 RUN apt update && \
-    apt install -y diffutils git iproute jq less lsof man nano procps \
-    perl-Digest-SHA net-tools openssh-clients rsync socat sudo time vim wget zip && \
+    apt install -y diffutils git iproute2 jq less lsof man nano procps \
+    net-tools openssh-clients rsync socat sudo time vim wget zip && \
     apt upgrade -y && \
     apt clean
 
