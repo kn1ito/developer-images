@@ -21,7 +21,7 @@ USER 0
 # Removed because of vulnerabilities: git-lfs
 RUN apt update && \
     apt install -y diffutils git iproute2 jq less lsof man nano procps \
-    net-tools openssh-client rsync socat sudo time vim wget zip curl && \
+    net-tools openssh-client rsync socat sudo time vim wget zip curl neofetch && \
     apt upgrade -y && \
     apt clean
 
