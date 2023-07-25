@@ -20,10 +20,10 @@ LABEL io.openshift.expose-services=""
 USER 0
 
 # Removed because of vulnerabilities: git-lfs
-RUN dnf install -y diffutils git iproute jq less lsof man nano procps \
-    perl-Digest-SHA net-tools openssh-clients rsync socat sudo time vim wget zip dnf-plugins-core && \
-    dnf copr enable -y konimex/neofetch && \
-    dnf install -y neofetch && \
+RUN subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms && \
+    dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm && \
+    dnf install -y diffutils git iproute jq less lsof man nano procps \
+        perl-Digest-SHA net-tools openssh-clients rsync socat sudo time vim wget zip neofetch && \
     dnf update -y && \
     dnf clean all
 
